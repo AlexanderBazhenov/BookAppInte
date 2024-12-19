@@ -38,3 +38,23 @@ xlim([0.5, 4.5])
 xlabel("время пролета")
 figure_name_out=strcat('TOF Mass Spectrum', '.png')
 print('-dpng', '-r300', figure_name_out), pwd
+
+b=1.25
+for ii=1:length(m)
+TOF(ii)=a+b*sqrt(m(ii))
+end
+for ii=1:length(m)
+  xx = [TOF(ii) TOF(ii)]
+  yy = [0 1.08]
+h =plot(xx, yy, '-k')
+set(h, 'color', 0.5*[0 0 1])
+text(TOF(ii), 1.1, num2str(ii))
+end
+
+xlabel("время пролета")
+figure_name_out=strcat('TOF Mass Spectrum b', '.png')
+print('-dpng', '-r300', figure_name_out), pwd
+
+
+ylim([0 1.2])
+xlim([0.5, 4.4])
