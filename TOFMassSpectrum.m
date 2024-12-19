@@ -36,5 +36,5 @@ yticks([])
 xlim([0.5, 4.5])
 
 xlabel("время пролета")
-figure_name_out=strcat('Lyman Forest', '.png')
+figure_name_out=strcat('TOF Mass Spectrum', '.png')
 print('-dpng', '-r300', figure_name_out), pwd
